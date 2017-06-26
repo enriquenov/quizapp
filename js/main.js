@@ -55,10 +55,13 @@ for (i = 0; i < questionsArray.length; i++) {
   boxLeft.appendChild(answerInput);
 
   questionText.setAttribute('id', 'question' + [i]);
+  answerInput.setAttribute('id', 'answer' + [i]);
+  console.log(answerInput);
+
   var el = document.getElementById('question' + [i]);
 
   answerInput.className = 'form-control';
-  console.log(questionText, el);
+  console.log(questionText);
 
   el.textContent = questionsArray[i].question;
 
@@ -86,13 +89,11 @@ submit.addEventListener("click", function(){
     var correctScore = 0;
     var incorrectScore = 0;
 
-    var inputValue = answerInput.value;
-    console.log(inputValue);
 
     for (i = 0; i < questionsArray.length; i++) {
-
-      answerInput.setAttribute('id', 'answer' + [i]);
+      console.log(i);
       var el2 = document.getElementById('answer' + [i]).value;
+      console.log(el2);
 
     if (questionsArray[i].answer == el2) {
       // el.className = 'correct';
